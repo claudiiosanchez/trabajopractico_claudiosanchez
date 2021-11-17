@@ -15,7 +15,10 @@ export const AuthContainer: React.FunctionComponent = () => {
 
   const handleFormSubmit = (auth: ISignin): void => {
     dispatch(signIn(auth));
-    history.push('todo');
+    setTimeout(function(){ 
+    if(datauser.authenticated)
+    {history.push('todo');}
+    }, 3000);
   };
 
   useEffect(() => {
